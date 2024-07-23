@@ -78,8 +78,6 @@ export async function addListener() {
         // ) return;
         const move = foundry.utils.hasProperty(change, "x") || foundry.utils.hasProperty(change, "y");
         const rotation = foundry.utils.hasProperty(change, "rotation");
-        console.log("move: " + move);
-        console.log("rotation: " + rotation);
         if ( move ) {
             let direction = "";
             if(diagonalMode){
