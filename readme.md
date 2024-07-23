@@ -8,3 +8,7 @@
 
 
 #**I will no longer be updating this module, it was written as a dare and I just dont have time to maintain it anymore.**
+
+
+Clone from https://gitlab.com/Freeze020/8bit-movement
+Trying to rescue this module for Foundry VTT v12
