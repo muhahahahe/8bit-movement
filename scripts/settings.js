@@ -35,4 +35,13 @@ export const registerSettings = function () {
         type: Boolean,
         onChange: () => window.location.reload()
     });
+    game.settings.register("8bit-movement", "warnings", {
+        name: game.i18n.format("8BITMOVEMENT.Settings-Warn_name"),
+        hint: game.i18n.format("8BITMOVEMENT.Settings-Warn_hint"),
+        scope: "world",
+        config: true,
+        default: false,
+        type: Boolean,
+        onChange: () => window.location.reload()
+    });
 };

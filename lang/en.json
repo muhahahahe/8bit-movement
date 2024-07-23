@@ -21,5 +21,9 @@
     "8BITMOVEMENT.Token-Mode_name": "Token HUD mode: ",
     "8BITMOVEMENT.Token-Mode_hint": "With this setting on the setup of the token can be done via the token HUD",
     "8BITMOVEMENT.Diagonal-Mode_name": "Diagonal mode: ",
-    "8BITMOVEMENT.Diagonal-Mode_hint": "NOTE: For now only accessible via the token HUD mode, activate this mode for using all 8 directions, if you have the images for it..."
+    "8BITMOVEMENT.Diagonal-Mode_hint": "NOTE: For now only accessible via the token HUD mode, activate this mode for using all 8 directions, if you have the images for it...",
+    "8BITMOVEMENT.Warn.No_Images": "No directional images found for this token, please upload directional images first.",
+    "8BITMOVEMENT.Warn.No_Images_Diagonal": "No diagonal images found for this token, please upload diagonal images first.",
+    "8BITMOVEMENT.Settings-Warn_name": "Disable Warning Notification for missing images: ",
+    "8BITMOVEMENT.Settings-Warn_hint": "When ticked the warning notification for missing images will be disabled."
 }

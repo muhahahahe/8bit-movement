@@ -70,23 +70,27 @@ export async function addListener() {
     const diagonalMode = game.settings.get(MODULE_NAME, "diagonalMode");
     Hooks.on("preUpdateToken", function changeImage(token, change) {
         if(!token.flags[MODULE_NAME]) return;
-        // removed cause rework needed.
-        // if(token.texture.src !== token.getFlag(MODULE_NAME, "up") &&
-        //     token.texture.src !== token.getFlag(MODULE_NAME, "down") &&
-        //     token.texture.src !== token.getFlag(MODULE_NAME, "right") &&
-        //     token.texture.src !== token.getFlag(MODULE_NAME, "left")
-        // ) return;
+        if(!token.getFlag(MODULE_NAME, "up") &&
+            !token.getFlag(MODULE_NAME, "down") &&
+            !token.getFlag(MODULE_NAME, "right") &&
+            !token.getFlag(MODULE_NAME, "left")
+        ) {
+            if (!game.settings.get(MODULE_NAME, "warnings")) ui.notifications.warn(game.i18n.localize("8BITMOVEMENT.Warn.No_Images"));
+            return;
+        }
         const move = foundry.utils.hasProperty(change, "x") || foundry.utils.hasProperty(change, "y");
         const rotation = foundry.utils.hasProperty(change, "rotation");
         if ( move ) {
             let direction = "";
             if(diagonalMode){
-                // removed cause rework needed.
-                // if(token.texture.src !== token.getFlag(MODULE_NAME, "up-left") &&
-                //     token.texture.src !== token.getFlag(MODULE_NAME, "down-left") &&
-                //     token.texture.src !== token.getFlag(MODULE_NAME, "up-right") &&
-                //     token.texture.src !== token.getFlag(MODULE_NAME, "up-left")
-                // ) return;
+                if(!token.getFlag(MODULE_NAME, "up-left") &&
+                    !token.getFlag(MODULE_NAME, "down-left") &&
+                    !token.getFlag(MODULE_NAME, "up-right") &&
+                    !token.getFlag(MODULE_NAME, "up-left")
+                ) {
+                    if (!game.settings.get(MODULE_NAME, "warnings")) ui.notifications.warn(game.i18n.localize("8BITMOVEMENT.Warn.No_Images_Diagonal"));
+                    return;
+                }
                 if (foundry.utils.isNewerVersion(game.version, "12")) {
                     const oldPosition = foundry.utils.duplicate(token.getFlag(MODULE_NAME, "oldPosition"));
                     if(oldPosition.x === change.x && oldPosition.y === change.y) return;
@@ -201,8 +205,7 @@ export async function createHudButtons(sheet) {
             await initializeMovement(token.id); 
             sheet.render();
         });
-    }
-    else {
+    } else {
         if(token.document.getFlag(MODULE_NAME, "locked")) {
             $("#token-hud .col.middle .image-box").append(`<div class="movement-icon option middle" id="unlock-images" ><i class="fas fa-lock" title="${game.i18n.format("8BITMOVEMENT.unlock")}"></i></div></div>`);
             $("#unlock-images").click(async function(){
@@ -212,14 +215,14 @@ export async function createHudButtons(sheet) {
             });
             return;
         }
-        const upImage = token.document.getFlag(MODULE_NAME, "up");
-        const downImage = token.document.getFlag(MODULE_NAME, "down");
-        const leftImage = token.document.getFlag(MODULE_NAME, "left");
-        const rightImage = token.document.getFlag(MODULE_NAME, "right");
-        const upLeftImage = token.document.getFlag(MODULE_NAME, "UL");
-        const upRightImage = token.document.getFlag(MODULE_NAME, "UR");
-        const downLeftImage = token.document.getFlag(MODULE_NAME, "DL");
-        const downRightImage = token.document.getFlag(MODULE_NAME, "DR");
+        const upImage = token.document.getFlag(MODULE_NAME, "up") || token.actor.img;
+        const downImage = token.document.getFlag(MODULE_NAME, "down") || token.actor.img;
+        const leftImage = token.document.getFlag(MODULE_NAME, "left") || token.actor.img;
+        const rightImage = token.document.getFlag(MODULE_NAME, "right") || token.actor.img;
+        const upLeftImage = token.document.getFlag(MODULE_NAME, "UL") || token.actor.img;
+        const upRightImage = token.document.getFlag(MODULE_NAME, "UR") || token.actor.img;
+        const downLeftImage = token.document.getFlag(MODULE_NAME, "DL") || token.actor.img;
+        const downRightImage = token.document.getFlag(MODULE_NAME, "DR") || token.actor.img;
 
         $("#token-hud .col.middle .image-box").append(`<div class="movement-icon option" id="lock-images" ><i class="fas fa-lock-open" title="${game.i18n.format("8BITMOVEMENT.lock")}"></i></div>`);
         $("#lock-images").click(async function(){
