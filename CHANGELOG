@@ -1,0 +1,48 @@
+Change Log for Token Movement 8-bit Style.
+
+1.0.2:
+
+    -Added a mechanic that recognizes the key words UP DOWN LEFT RIGHT (or lowercase) in your file name.
+    And automatically sets up the correct image in the correct slot when initializing the 8-bit movement
+    when clicking the [+] icon in the token hud or token configuration window.
+    Do make sure you have all four images in the same location.
+
+    -Changed to 0.8.9 compatability.
+
+
+1.0.3:
+    -Added support for 8 directions if there you have the images for it. 
+    Note: for now if you want those images to be Added directly on initializing, 
+    they will need the suffixes UL, UR, DL, DR for Up Left, Up Right, Down Left and Down Right respectively
+    Example: MyImage_UP.webp, MyImage_DOWN.webp, MyImage_LEFT.webp, MyImage_RIGHT.webp, 
+             MyImage_UL.webp, MyImage_UR.webp, MyImage_DL.webp, MyImage_DR.webp.
+    These would get placed on init immediately.
+
+    -If you dont have the images / dont want to use diagonals keep the setting OFF in the configuration.
+
+    -Now supports NUMPAD keys for movement too.
+
+1.0.4:
+    -Fixed a small issue with auto-application of the images to the correct direction if certain suffixes 
+    are present in the file names. Now should accept lowercase and uppercase.
+    -added a wiki (very bare bones for now): https://gitlab.com/Freeze020/8bit-movement/-/wikis/Home
+
+1.0.5:
+    -Fixed errors when canvas is disabled.
+
+1.0.6:
+    -In v9 configuration can be done again in the Token Configuration dialog.
+
+1.0.7:
+    -Added support for v10.
+
+1.0.8:
+    -quick bug fix, a check for movement was wrong in v10 version.
+
+1.0.9:
+    -another fix for img => texture.src
+
+
+1.1.0:
+    -overhaul for the way token textures are updated for v10+ only. Should result in better performance now only one update is used. Also no longer dependent on key presses will. Mouse dragged position changes also result in token texture direction change.
+    -would have done this for v9 too were it not that it somehow overrides the movement animation resulting in teleporting tokens. So alas for v9 users no changes for you!
