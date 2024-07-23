@@ -5,16 +5,16 @@
   "description": "Setup your tokens to have four directions when moving them with WASD or arrow keys.<br>Easy to setup using the Token HUD or Token config screen. <br>Configure settings to choose your preferred method or whether players or only the GM can make alterations.",
   "authors": [
     {
-      "name": "Freeze",
-      "discord": "Freeze#2689"
+      "name": "muhahahahe",
+      "discord": "muhahahahe"
     }
   ],
-  "version": "1.1.0",
+  "version": "1.2.0",
   "minimumCoreVersion": "9",
-  "compatibleCoreVersion": "11",
+  "compatibleCoreVersion": "12",
   "compatibility": {
     "minimum": "9",
-    "verified": "11",
+    "verified": "12",
     "maximum": "12"
   },
   "scripts": [],
@@ -31,9 +31,9 @@
       "path": "lang/en.json"
     }
   ],
-  "manifest": "https://gitlab.com/Freeze020/8bit-movement/-/raw/master/module.json",
-  "url": "https://gitlab.com/Freeze020/8bit-movement",
-  "download": "https://gitlab.com/Freeze020/8bit-movement/-/archive/v1.1.0/8bit-movement-v1.1.0.zip",
+  "manifest": "https://raw.githubusercontent.com/muhahahahe/8bit-movement/main/src/module.json",
+  "url": "https://github.com/muhahahahe/8bit-movement",
+  "download": "https://github.com/muhahahahe/8bit-movement/releases/download/1.2.0/8bit-movement_1.2.0.zip",
   "protected": false,
   "coreTranslation": false,
   "library": false

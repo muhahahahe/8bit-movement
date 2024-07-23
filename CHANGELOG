@@ -46,3 +46,8 @@ Change Log for Token Movement 8-bit Style.
 1.1.0:
     -overhaul for the way token textures are updated for v10+ only. Should result in better performance now only one update is used. Also no longer dependent on key presses will. Mouse dragged position changes also result in token texture direction change.
     -would have done this for v9 too were it not that it somehow overrides the movement animation resulting in teleporting tokens. So alas for v9 users no changes for you!
+
+1.2.0:
+    -added support for Foundry v12
+    -added warning if no directional images were set
+    -added setting to disable warnings
