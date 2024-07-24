@@ -83,10 +83,10 @@ export async function addListener() {
         if ( move ) {
             let direction = "";
             if(diagonalMode){
-                if(!token.getFlag(MODULE_NAME, "up-left") &&
-                    !token.getFlag(MODULE_NAME, "down-left") &&
-                    !token.getFlag(MODULE_NAME, "up-right") &&
-                    !token.getFlag(MODULE_NAME, "up-left")
+                if(!token.getFlag(MODULE_NAME, "UL") &&
+                    !token.getFlag(MODULE_NAME, "UR") &&
+                    !token.getFlag(MODULE_NAME, "DL") &&
+                    !token.getFlag(MODULE_NAME, "DR")
                 ) {
                     if (!game.settings.get(MODULE_NAME, "warnings")) ui.notifications.warn(game.i18n.localize("8BITMOVEMENT.Warn.No_Images_Diagonal"));
                     return;
