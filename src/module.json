@@ -9,7 +9,7 @@
       "discord": "muhahahahe"
     }
   ],
-  "version": "1.2.0",
+  "version": "1.2.1",
   "minimumCoreVersion": "9",
   "compatibleCoreVersion": "12",
   "compatibility": {
@@ -33,7 +33,7 @@
   ],
   "manifest": "https://raw.githubusercontent.com/muhahahahe/8bit-movement/main/src/module.json",
   "url": "https://github.com/muhahahahe/8bit-movement",
-  "download": "https://github.com/muhahahahe/8bit-movement/releases/download/1.2.0/8bit-movement_1.2.0.zip",
+  "download": "https://github.com/muhahahahe/8bit-movement/releases/download/1.2.1/8bit-movement_1.2.1.zip",
   "protected": false,
   "coreTranslation": false,
   "library": false

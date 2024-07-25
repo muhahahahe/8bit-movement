@@ -51,3 +51,6 @@ Change Log for Token Movement 8-bit Style.
     -added support for Foundry v12
     -added warning if no directional images were set
     -added setting to disable warnings
+
+1.2.1:
+    -fixed diagonal movement not working in v12

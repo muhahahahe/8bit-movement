@@ -1,0 +1,13 @@
+{
+  "name": "8bit-movement",
+  "version": "1.2.1",
+  "description": "Setup your token to be semi animated like 8bit games of old. This module allows you to set a different image for each direction (WSAD, arrow keys).",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "muhahahahe",
+  "license": "MIT"
+}
