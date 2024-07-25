@@ -1,4 +1,3 @@
-//V10 update in progress!!!
 //change image titles for tooltips from Foundry API looks nicer.
 const MODULE_NAME = "8bit-movement";
 /**
@@ -92,17 +91,15 @@ export async function addListener() {
                     return;
                 }
                 if (foundry.utils.isNewerVersion(game.version, "12")) {
-                    const oldPosition = foundry.utils.duplicate(token.getFlag(MODULE_NAME, "oldPosition"));
-                    if(oldPosition.x === change.x && oldPosition.y === change.y) return;
-                    if(oldPosition.x > change.x && oldPosition.y === change.y) direction = "left";
-                    if(oldPosition.x < change.x && oldPosition.y === change.y) direction = "right";
-                    if(oldPosition.y > change.y && oldPosition.x === change.x) direction = "up";
-                    if(oldPosition.y < change.y && oldPosition.x === change.x) direction = "down";
-                    if(oldPosition.x > change.x && oldPosition.y > change.y) direction = "up-left";
-                    if(oldPosition.x < change.x && oldPosition.y > change.y) direction = "up-right";
-                    if(oldPosition.x > change.x && oldPosition.y < change.y) direction = "down-left";
-                    if(oldPosition.x < change.x && oldPosition.y < change.y) direction = "down-right";
-                    token.setFlag(MODULE_NAME, "oldPosition", { x: change.x, y: change.y });
+                    if(token.x === change.x && token.y === change.y) return;
+                    if(token.x > change.x && token.y === change.y) direction = "left";
+                    if(token.x < change.x && token.y === change.y) direction = "right";
+                    if(token.y > change.y && token.x === change.x) direction = "up";
+                    if(token.y < change.y && token.x === change.x) direction = "down";
+                    if(token.x > change.x && token.y > change.y) direction = "up-left";
+                    if(token.x < change.x && token.y > change.y) direction = "up-right";
+                    if(token.x > change.x && token.y < change.y) direction = "down-left";
+                    if(token.x < change.x && token.y < change.y) direction = "down-right";
                 } else {
                     if(token.x > change.x && !change.y) direction = "left";
                     if(token.x < change.x && !change.y) direction = "right";
@@ -114,20 +111,10 @@ export async function addListener() {
                     if(token.x < change.x && token.y < change.y) direction = "down-right";
                 }
             } else {
-                if (foundry.utils.isNewerVersion(game.version, "12")) {
-                    const oldPosition = foundry.utils.duplicate(token.getFlag(MODULE_NAME, "oldPosition"));
-                    if(oldPosition.x === change.x && oldPosition.y === change.y) return;
-                    if(oldPosition.x > change.x) direction = "left";
-                    if(oldPosition.x < change.x) direction = "right";
-                    if(oldPosition.y > change.y) direction = "up";
-                    if(oldPosition.y < change.y) direction = "down";
-                    token.setFlag(MODULE_NAME, "oldPosition", { x: change.x, y: change.y });
-                } else {
-                    if(token.x > change.x) direction = "left";
-                    if(token.x < change.x) direction = "right";
-                    if(token.y > change.y) direction = "up";
-                    if(token.y < change.y) direction = "down";
-                }
+                if(token.x > change.x) direction = "left";
+                if(token.x < change.x) direction = "right";
+                if(token.y > change.y) direction = "up";
+                if(token.y < change.y) direction = "down";
             }
             if(direction === "up") {
                 if(token.texture.src === token.flags[MODULE_NAME].up) return;
