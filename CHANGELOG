@@ -54,3 +54,7 @@ Change Log for Token Movement 8-bit Style.
 
 1.2.1:
     -fixed diagonal movement not working in v12
+
+1.2.2:
+    -now requires libWrapper for v12
+    -added setting to disable animation on rotation
