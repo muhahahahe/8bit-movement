@@ -44,4 +44,15 @@ export const registerSettings = function () {
         type: Boolean,
         onChange: () => window.location.reload()
     });
+    if (foundry.utils.isNewerVersion(game.version, "12")) {
+        game.settings.register("8bit-movement", "disableRotationAnimation", {
+            name: game.i18n.format("8BITMOVEMENT.Disable-Rotation-Animation_name"),
+            hint: game.i18n.format("8BITMOVEMENT.Disable-Rotation-Animation_hint"),
+            scope: "world",
+            config: true,
+            default: false,
+            type: Boolean,
+            onChange: () => window.location.reload()
+        });
+    }
 };
