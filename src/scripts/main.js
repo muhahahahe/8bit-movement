@@ -11,6 +11,20 @@ Hooks.on("ready", async function() {
     else addListenerV9();
 });
 
+Hooks.once('ready', () => {
+    if (foundry.utils.isNewerVersion(game.version, "12") && game.settings.get("8bit-movement", "disableRotationAnimation")) {
+        libWrapper.register('8bit-movement', 'Token.prototype.animate', function (wrapped, ...args) {
+            const [attributes, options = {}] = args;
+
+            if (attributes.hasOwnProperty('texture') && attributes.hasOwnProperty('rotation')) {
+                options.duration = 0;
+            }
+
+            return wrapped(attributes, options);
+        }, 'WRAPPER');
+    }
+});
+
 Hooks.on("renderTokenHUD", async function (sheet) {
     if(foundry.utils.isNewerVersion(game.version, "10")) createHudButtons(sheet);
     else createHudButtonsV9(sheet);
