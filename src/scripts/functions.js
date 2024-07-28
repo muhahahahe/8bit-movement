@@ -154,22 +154,18 @@ export async function addListener() {
                 case 0: 
                     if(token.texture.src === token.flags[MODULE_NAME].down) return;
                     foundry.utils.setProperty(change, "texture.src", token.flags[MODULE_NAME].down);
-                    delete change.rotation
                     break;
                 case 90: 
                     if(token.texture.src === token.flags[MODULE_NAME].left) return;
                     foundry.utils.setProperty(change, "texture.src", token.flags[MODULE_NAME].left);
-                    delete change.rotation
                     break;
                 case 180: 
                     if(token.texture.src === token.flags[MODULE_NAME].up) return;
                     foundry.utils.setProperty(change, "texture.src", token.flags[MODULE_NAME].up);
-                    delete change.rotation
                     break;
                 case 270: 
                     if(token.texture.src === token.flags[MODULE_NAME].right) return;
                     foundry.utils.setProperty(change, "texture.src", token.flags[MODULE_NAME].right);
-                    delete change.rotation
                     break;
                 default: break;
             }
