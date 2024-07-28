@@ -24,6 +24,8 @@
     "8BITMOVEMENT.Diagonal-Mode_hint": "NOTE: For now only accessible via the token HUD mode, activate this mode for using all 8 directions, if you have the images for it...",
     "8BITMOVEMENT.Warn.No_Images": "No directional images found for this token, please upload directional images first.",
     "8BITMOVEMENT.Warn.No_Images_Diagonal": "No diagonal images found for this token, please upload diagonal images first.",
-    "8BITMOVEMENT.Settings-Warn_name": "Disable Warning Notification for missing images: ",
-    "8BITMOVEMENT.Settings-Warn_hint": "When ticked the warning notification for missing images will be disabled."
+    "8BITMOVEMENT.Settings-Warn_name": "Disable Warning Notification: ",
+    "8BITMOVEMENT.Settings-Warn_hint": "When ticked the warning notification for missing images will be disabled.",
+    "8BITMOVEMENT.Disable-Rotation-Animation_name": "Disable Rotation Animation: ",
+    "8BITMOVEMENT.Disable-Rotation-Animation_hint": "When ticked the rotation animation will be disabled."
 }
